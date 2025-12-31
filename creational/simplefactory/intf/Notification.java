@@ -1,0 +1,9 @@
+package simplefactory.intf;
+
+/**
+ * Simple notification contract used by the Simple Factory example.
+ * Implementations (Email/SMS/Push) provide the actual send behavior.
+ */
+public interface Notification {
+    public void send(String message);
+}
