@@ -14,11 +14,15 @@ public class MusicPlayer {
         playlist.addSong("Blinding Lights");
 
         // Ask the collection for an Iterator to traverse songs one by one.
-        Iterator<String> iterator = playlist.createIterator();
+        Iterator<String> iterator = playlist.createIterator("Sequential");
 
         System.out.println("Now Playing:");
         while (iterator.hasNext()) {
             System.out.println(" 🎵 " + iterator.next());
         }
+
+        // To play random/shuffled song
+        Iterator<String> shuffleIterator = playlist.createIterator("Shuffle");
+        System.out.println(" 🎵 " + shuffleIterator.next());
     }
 }

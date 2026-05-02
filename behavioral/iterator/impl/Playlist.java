@@ -25,8 +25,12 @@ public class Playlist implements IterableCollection<String> {
     }
 
     @Override
-    public Iterator<String> createIterator() {
+    public Iterator<String> createIterator(String type) {
         // Returning an iterator keeps traversal logic outside the collection.
-        return new PlaylistIterator(this);
+        switch (type) {
+            case "Sequential" : return new SequentialPlaylistIterator(this);
+            case "Shuffle": return new ShufflePlaylistIterator(this);
+            default: throw new IllegalArgumentException("Playlist type not available");
+        }
     }
 }
