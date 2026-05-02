@@ -1,5 +1,6 @@
 package simplefactory;
 
+import simplefactory.factory.NotificationFactory;
 import simplefactory.intf.Notification;
 
 /**
@@ -8,13 +9,13 @@ import simplefactory.intf.Notification;
  */
 public class Client {
     public static void main(String[] args) {
-        Notification emailNotification = simplefactory.factory.NotificationFactory.createNotification("email");
+        Notification emailNotification = NotificationFactory.createNotification("email");
         emailNotification.send("Hello via Email!");
 
-        Notification smsNotification = simplefactory.factory.NotificationFactory.createNotification("sms");
+        Notification smsNotification = NotificationFactory.createNotification("sms");
         smsNotification.send("Hello via SMS!");
 
-        Notification pushNotification = simplefactory.factory.NotificationFactory.createNotification("push");
+        Notification pushNotification = NotificationFactory.createNotification("push");
         pushNotification.send("Hello via Push Notification!");
     }
 }
